@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Careers | Nyquisition</title>
+    <meta name="description" content="Join the team helping engineers remember what they learn. Open roles in engineering, learning, design and operations." />
+    <meta name="theme-color" content="#fbf4df" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/css/base.css" />
+    <link rel="stylesheet" href="/src/css/careers.css" />
+  </head>
+  <body>
+    <main id="main">
+      <header class="page-hero wrap careers-hero">
+        <div class="careers-hero__copy">
+          <h1>Help engineers keep what they learn.</h1>
+          <p class="lede">We're a small team of engineers, teachers and designers in Pittsburgh and around the Americas, building the study habit we wish we'd had.</p>
+          <div class="careers-hero__ctas">
+            <a class="btn" href="#roles">See open roles</a>
+            <a class="btn btn--ghost" href="/blog.html?category=Inside%20Nyquisition">Read about how we work</a>
+          </div>
+        </div>
+        <figure class="polaroid" aria-hidden="true">
+          <div class="polaroid__photo" data-team-photo></div>
+          <figcaption class="hand">the team (the humans were busy)</figcaption>
+        </figure>
+      </header>
+
+      <section class="wrap facts" aria-label="About the company">
+        <div><strong>28</strong><span>people, 19 of them with engineering degrees</span></div>
+        <div><strong>18k</strong><span>learners in the beta, doubling every quarter</span></div>
+        <div><strong>4</strong><span>days a week in Pittsburgh, or fully remote</span></div>
+      </section>
+
+      <section class="section wrap values" aria-labelledby="values-title">
+        <h2 id="values-title">How we work.</h2>
+        <div class="values__grid">
+          <article class="value value--nyq"><h3>Learn it before you teach it</h3><p>Everyone, including engineers and designers, takes the courses. If a question confuses us, it'll confuse a learner.</p></article>
+          <article class="value value--polly"><h3>Ship the hard version</h3><p>A multiple choice question is easy to build. A Bode plot you can draw with your thumb is worth the extra weeks.</p></article>
+          <article class="value value--ozzy"><h3>Small, calm, and written down</h3><p>Few meetings, long documents, no heroics. We keep on-call quiet and evenings free.</p></article>
+          <article class="value value--cubert"><h3>Respect the five minutes</h3><p>Our learners give us five minutes a day. Every screen has to earn its place in them.</p></article>
+        </div>
+      </section>
+
+      <section class="section wrap perks" aria-labelledby="perks-title">
+        <div class="perks__head">
+          <h2 id="perks-title">What you get.</h2>
+          <p class="lede">The benefits below apply to every full-time role, in every location.</p>
+        </div>
+        <ul class="perks__list">
+          <li><strong>Equity for everyone</strong><span>Meaningful early-stage equity, with a 10-year exercise window.</span></li>
+          <li><strong>Health, dental, vision</strong><span>100% of premiums covered for you, 80% for dependants.</span></li>
+          <li><strong>$1,500 learning budget</strong><span>Courses, conferences, textbooks. Yes, the expensive ones.</span></li>
+          <li><strong>16 weeks parental leave</strong><span>Fully paid, for every parent.</span></li>
+          <li><strong>Home office setup</strong><span>$1,200 when you join, plus a monthly internet stipend.</span></li>
+          <li><strong>A real week off at New Year</strong><span>The whole company closes, on top of your vacation.</span></li>
+        </ul>
+      </section>
+
+      <section class="section wrap hiring" aria-labelledby="hiring-title">
+        <h2 id="hiring-title">How hiring works.</h2>
+        <ol class="hiring__steps">
+          <li><h3>Intro call</h3><p>30 minutes with the hiring manager. Ask us anything.</p><span class="hand">about a week</span></li>
+          <li><h3>Practical exercise</h3><p>A real problem from our work, three hours at most, and we pay you for it.</p><span class="hand">your schedule</span></li>
+          <li><h3>Team day</h3><p>Meet four people you'd work with, including someone outside your team.</p><span class="hand">one afternoon</span></li>
+          <li><h3>Decision</h3><p>A yes or no within five working days, with feedback either way.</p><span class="hand">5 days max</span></li>
+        </ol>
+      </section>
+
+      <section class="section wrap roles" id="roles" aria-labelledby="roles-title">
+        <div class="roles__head">
+          <h2 id="roles-title">Open roles.</h2>
+          <p class="roles__count" data-count aria-live="polite"></p>
+        </div>
+        <div class="roles__filters">
+          <div class="segmented" role="group" aria-label="Filter by team" data-teams></div>
+          <div class="roles__selects">
+            <label class="visually-hidden" for="loc">Location</label>
+            <select class="select" id="loc" data-location><option value="">All locations</option></select>
+            <label class="search">
+              <span class="visually-hidden">Search roles</span>
+              <input class="input" type="search" placeholder="Search roles" data-search />
+            </label>
+          </div>
+        </div>
+        <ul class="roles__list" data-roles></ul>
+        <div class="roles__general sheet">
+          <div>
+            <h3>Don't see your role?</h3>
+            <p>We hire for people as much as positions. Tell us what you'd do here.</p>
+          </div>
+          <a class="btn btn--ghost" href="/job.html?id=general">Send a general application</a>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/js/careers.js"></script>
+  </body>
+</html>

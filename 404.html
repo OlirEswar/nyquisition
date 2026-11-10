@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page not found | Nyquisition</title>
+    <meta name="description" content="This page could not be found." />
+    <meta name="theme-color" content="#fbf4df" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/css/base.css" />
+  </head>
+  <body>
+    <main id="main" class="wrap lost">
+      <div class="lost__art" data-lost aria-hidden="true"></div>
+      <h1>This page is in the right half-plane.</h1>
+      <p class="lede">It's unstable, so it blew up. The link may be old or mistyped.</p>
+      <div class="lost__actions">
+        <a class="btn" href="/">Go to the home page</a>
+        <a class="btn btn--ghost" href="/blog.html">Read the blog</a>
+      </div>
+    </main>
+    <style>
+      .lost { display: grid; justify-items: center; gap: var(--s-4); padding-block: var(--s-8); text-align: center; }
+      .lost h1 { font-size: var(--step-4); max-width: 16ch; }
+      .lost .lede { margin-inline: auto; }
+      .lost__art { position: relative; width: min(420px, 90%); aspect-ratio: 2 / 1; }
+      .lost__art svg.axes { position: absolute; inset: 0; width: 100%; height: 100%; }
+      .lost__art .crew { position: absolute; width: 22%; left: 72%; top: 20%; animation: wobble 0.5s ease-in-out infinite alternate; }
+      @keyframes wobble { from { rotate: -14deg; } to { rotate: 14deg; } }
+      .lost__actions { display: flex; flex-wrap: wrap; gap: var(--s-3); justify-content: center; }
+    </style>
+    <script type="module">
+      import { initChrome } from '/src/js/chrome.js';
+      import { polly } from '/src/js/crew.js';
+      initChrome();
+      document.querySelector('[data-lost]').innerHTML =
+        '<svg class="axes" viewBox="0 0 400 200"><rect x="200" y="0" width="200" height="200" fill="rgba(255,93,143,.1)"/><path d="M10 100H390M200 190V10" stroke="#8d88a3" stroke-width="2.5" fill="none" stroke-linecap="round"/><text x="210" y="190" font-family="Architects Daughter" font-size="15" fill="#d93d6f">unstable side</text></svg>' +
+        polly({ mood: 'wow', label: '' });
+    </script>
+  </body>
+</html>

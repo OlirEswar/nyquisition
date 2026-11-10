@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy and terms | Nyquisition</title>
+    <meta name="description" content="How Nyquisition handles your data, and the terms for using it." />
+    <meta name="theme-color" content="#fbf4df" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/css/base.css" />
+  </head>
+  <body>
+    <main id="main" class="wrap legal">
+      <header class="page-hero">
+        <h1>Privacy and terms.</h1>
+        <p class="lede">The short version: we use your answers to build your quizzes and nothing else. We don't sell data and we don't run ads.</p>
+        <p class="legal__updated">Last updated November 1, 2026</p>
+      </header>
+      <div class="legal__layout">
+        <nav class="legal__nav" aria-label="On this page">
+          <a href="#privacy">Privacy policy</a>
+          <a href="#terms">Terms of service</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="prose">
+          <section id="privacy">
+            <h2>Privacy policy</h2>
+            <h3>What we collect</h3>
+            <ul>
+              <li><strong>Account details:</strong> your name, email and password (stored hashed).</li>
+              <li><strong>Learning activity:</strong> the questions you see, your answers, how long you take, and the notes saved for you.</li>
+              <li><strong>Device data:</strong> app version, operating system and crash reports, so we can fix bugs.</li>
+            </ul>
+            <h3>How we use it</h3>
+            <p>To schedule your quizzes, generate your notes, answer your questions to Nyq, and improve the courses. Aggregated, de-identified data may be used in learning research we publish.</p>
+            <h3>What we don't do</h3>
+            <p>We don't sell your data, share it with advertisers, or use it to train models for anyone else.</p>
+            <h3>Your choices</h3>
+            <p>You can export or delete your account and all of its data from settings at any time. Deletion is complete within 30 days, including backups.</p>
+            <h3>Job applicants</h3>
+            <p>If you apply for a role, we keep your application for 12 months to consider you for other openings, then delete it. Ask us any time and we'll delete it sooner.</p>
+          </section>
+          <section id="terms">
+            <h2>Terms of service</h2>
+            <h3>Using Nyquisition</h3>
+            <p>You need to be at least 13 to make an account. Keep your password private, and don't use the service to break the law or harm others.</p>
+            <h3>Subscriptions</h3>
+            <p>Max renews automatically until you cancel. You can cancel any time from settings, and keep Max until the end of the period you've paid for. Free trials convert to a paid plan unless cancelled before they end.</p>
+            <h3>Content</h3>
+            <p>Our courses, characters and software belong to Nyquisition, Inc. Your notes and answers are yours; you give us permission to store and process them to run the service.</p>
+            <h3>AI-generated material</h3>
+            <p>Some explanations and questions are generated or adapted by AI and reviewed by our curriculum team. They can still contain mistakes. Please report anything that looks wrong from the lesson screen.</p>
+            <h3>Changes</h3>
+            <p>If we make material changes to these terms, we'll email you at least 30 days before they take effect.</p>
+          </section>
+          <section id="contact">
+            <h2>Contact</h2>
+            <p>Questions about privacy or these terms: <a href="mailto:privacy@nyquisition.app">privacy@nyquisition.app</a>.</p>
+          </section>
+        </div>
+      </div>
+    </main>
+    <style>
+      .legal__updated { margin-top: var(--s-3); color: var(--ink-soft); font-weight: 600; font-size: .92rem; }
+      .legal__layout { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: var(--s-7); }
+      .legal__nav { position: sticky; top: 100px; align-self: start; display: grid; gap: var(--s-2); font-weight: 700; }
+      .legal__nav a { text-decoration: none; color: var(--ink-soft); }
+      .legal__nav a:hover { color: var(--ink); }
+      .legal section { scroll-margin-top: 100px; padding-bottom: var(--s-5); }
+      .legal section h2 { margin-top: 0; }
+      @media (max-width: 760px) { .legal__layout { grid-template-columns: 1fr; } .legal__nav { position: static; display: flex; flex-wrap: wrap; gap: var(--s-4); } }
+    </style>
+    <script type="module">
+      import { initChrome } from '/src/js/chrome.js';
+      initChrome();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nyquisition: daily engineering lessons</title>
+    <meta name="description" content="Five-minute daily quizzes for control theory, electromagnetics, signals and circuits. AI tunes each one to what you're about to forget, and saves interactive notes you can come back to." />
+    <meta name="theme-color" content="#fbf4df" />
+    <meta property="og:title" content="Nyquisition: sample often, forget nothing" />
+    <meta property="og:description" content="Daily AI-tuned quizzes for intermediate and advanced engineering." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/css/base.css" />
+    <link rel="stylesheet" href="/src/css/home.css" />
+  </head>
+  <body>
+    <main id="main">
+      <!-- ============================================================ HERO -->
+      <section class="hero" aria-labelledby="hero-title">
+        <canvas class="hero__stage" data-hero-canvas role="img" aria-label="The Nyquisition crew standing on a sheet of graph paper: Nyq the green triangle, Polly the pink X, Ozzy the blue ball and Cubert the yellow cube. Drag, toss or click them."></canvas>
+        <div class="wrap hero__inner">
+          <div class="hero__copy">
+            <h1 class="hero__title" id="hero-title">
+              <span class="hero__line">Sample often.</span>
+              <span class="hero__line">Forget nothing.</span>
+            </h1>
+            <svg class="hero__wave" viewBox="0 0 520 70" aria-hidden="true" data-wave>
+              <path class="hero__wave-line" d="M4 35 C 30 -2, 60 -2, 86 35 S 142 72, 168 35 S 224 -2, 250 35 S 306 72, 332 35 S 388 -2, 414 35 S 470 72, 496 35" />
+              <g class="hero__samples"></g>
+            </svg>
+            <p class="lede">Five-minute daily quizzes for control theory, electromagnetics and the rest of the engineering you meant to really understand. The AI tunes each one to what you're about to forget.</p>
+            <div class="hero__ctas">
+              <button class="btn" type="button" data-signup>Start learning free</button>
+              <a class="btn btn--ghost" href="#lesson">Try a lesson</a>
+            </div>
+            <div class="hero__proof">
+              <div class="hero__faces" aria-hidden="true" data-mini-crew></div>
+              <p><strong>18,400 engineers</strong> kept a streak going this week.</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero__note hand" aria-hidden="true">
+          <span>psst. you can pick us up</span>
+          <svg class="doodle boil" viewBox="0 0 120 70"><path d="M8 10 C 40 4, 80 14, 96 48" /><path d="M84 42 l12 8 2-14" /></svg>
+        </div>
+        <div class="hero__poke" role="group" aria-label="Say hi to the crew">
+          <span class="hand">say hi:</span>
+          <button class="chip" type="button" data-poke="nyq">Nyq</button>
+          <button class="chip" type="button" data-poke="polly">Polly</button>
+          <button class="chip" type="button" data-poke="ozzy">Ozzy</button>
+          <button class="chip" type="button" data-poke="cubert">Cubert</button>
+          <button class="chip" type="button" data-scatter>Toss everyone</button>
+        </div>
+        <div class="bubbles" data-bubbles aria-live="polite"></div>
+      </section>
+
+      <!-- ========================================================= LESSON -->
+      <section class="section lesson" id="lesson" aria-labelledby="lesson-title">
+        <div class="wrap lesson__grid">
+          <div class="lesson__copy">
+            <h2 id="lesson-title">A lesson takes five minutes. Try one.</h2>
+            <p class="lede">Every morning you get a short quiz built from three things: what's new in your course, what you got wrong last week, and what you're about to forget.</p>
+            <ul class="ticks">
+              <li><strong>Questions you do, not just read.</strong> Tap a pole on the s-plane, drag a Bode asymptote, pick which field plot is right.</li>
+              <li><strong>Hearts, XP and streaks.</strong> The parts of a game that get you back tomorrow, aimed at material that usually needs a textbook and a deadline.</li>
+              <li><strong>Mistakes become notes.</strong> Miss something and Cubert writes it up, with a diagram, for next time.</li>
+            </ul>
+          </div>
+          <div class="clipboard">
+            <div class="clipboard__clip" aria-hidden="true"></div>
+            <div class="clipboard__sheet">
+              <div class="quiz" data-quiz aria-label="Sample lesson"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ HOW -->
+      <section class="section how" id="how" aria-labelledby="how-title">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 id="how-title">It knows what you're about to forget.</h2>
+            <p class="lede">Dense material fades fast. Nyquisition models how well you know each idea and quizzes you on it just before it slips, then waits longer each time you get it right.</p>
+          </div>
+          <div class="how__grid">
+            <figure class="sheet graph-card" data-forget>
+              <div class="tape" style="top:-12px;left:42%;rotate:-3deg"></div>
+              <div class="graph-card__controls">
+                <div class="segmented" role="group" aria-label="Which curves to show">
+                  <button class="chip" type="button" data-mode="both" aria-pressed="true">Both</button>
+                  <button class="chip" type="button" data-mode="cram" aria-pressed="false">Cram once</button>
+                  <button class="chip" type="button" data-mode="spaced" aria-pressed="false">Nyquisition</button>
+                </div>
+                <label class="slider">
+                  <span>Topic difficulty: <strong data-out-difficulty>Tricky</strong></span>
+                  <input type="range" min="0" max="99" value="50" data-difficulty />
+                </label>
+              </div>
+              <canvas class="graph-card__canvas" aria-label="Line chart of memory over 30 days. A pink curve for one cram session falls steeply. A blue sawtooth curve with scheduled quizzes stays high."></canvas>
+              <figcaption class="graph-card__legend">
+                <div class="legend-item legend-item--polly"><span>After 30 days, crammed once</span><strong data-out-cram>0%</strong></div>
+                <div class="legend-item legend-item--ozzy"><span>After 30 days, with Nyquisition</span><strong data-out-spaced>0%</strong></div>
+                <div class="legend-item legend-item--cubert"><span>Quick quizzes it took</span><strong data-out-reviews>0</strong></div>
+              </figcaption>
+            </figure>
+            <ol class="steps">
+              <li>
+                <h3>You answer</h3>
+                <p>Speed, confidence and the exact wrong answer you picked all count. Choosing −2j instead of −2 says something different from a guess.</p>
+              </li>
+              <li>
+                <h3>It models your memory</h3>
+                <p>Each concept gets its own estimate of how long you'll remember it, linked to the ideas it depends on. Shaky on partial fractions? Inverse Laplace gets more practice too.</p>
+              </li>
+              <li>
+                <h3>It writes tomorrow's quiz</h3>
+                <p>New material, plus the handful of old ideas closest to fading, in question styles you haven't seen for them yet.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================== NOTES -->
+      <section class="section notes" id="notes" aria-labelledby="notes-title">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 id="notes-title">Notes you can poke.</h2>
+            <p class="lede">Cubert keeps a notebook of everything you've struggled with. Every note has a working diagram, and Nyq reads them back to you when a new topic builds on an old one.</p>
+          </div>
+
+          <div class="notebook" data-notebook>
+            <div class="notebook__rings" aria-hidden="true"></div>
+            <div class="notebook__tabs" role="tablist" aria-label="Saved notes">
+              <button role="tab" id="tab-step" aria-controls="note-step" aria-selected="true" class="notebook__tab notebook__tab--nyq">Step response</button>
+              <button role="tab" id="tab-field" aria-controls="note-field" aria-selected="false" tabindex="-1" class="notebook__tab notebook__tab--ozzy">Field lines</button>
+            </div>
+
+            <article class="note" id="note-step" role="tabpanel" aria-labelledby="tab-step" data-step>
+              <div class="note__text">
+                <p class="note__meta"><span class="tag tag--polly">Saved Tuesday</span> after you missed Q3 in Unit 3</p>
+                <h3>Second-order systems: damping sets the overshoot</h3>
+                <p>The poles sit at <span class="marker">s = −ζωₙ ± jωₙ√(1 − ζ²)</span>. Drag ζ and watch them move: closer to the imaginary axis means more ringing.</p>
+                <p class="hand note__scribble">You picked "overshoot goes up". Notice it only depends on ζ, not ωₙ.</p>
+                <div class="note__presets">
+                  <button class="chip" type="button" data-preset="20,20">Springy</button>
+                  <button class="chip" type="button" data-preset="70,20">Just right</button>
+                  <button class="chip" type="button" data-preset="100,20">Critical</button>
+                  <button class="chip" type="button" data-preset="180,20">Sluggish</button>
+                </div>
+              </div>
+              <div class="note__sim">
+                <canvas class="note__plot" data-step-plot aria-label="Step response plot for a second-order system"></canvas>
+                <div class="note__row">
+                  <canvas class="note__splane" data-splane aria-label="S-plane with the two poles marked"></canvas>
+                  <div class="note__controls">
+                    <label class="slider"><span>Damping ζ <strong data-out-zeta>0.30</strong></span><input type="range" min="5" max="200" value="30" data-zeta /></label>
+                    <label class="slider"><span>Natural freq. ωₙ <strong data-out-wn>2.0 rad/s</strong></span><input type="range" min="5" max="40" value="20" data-wn /></label>
+                    <dl class="note__readout">
+                      <div><dt>Overshoot</dt><dd data-out-os>37%</dd></div>
+                      <div><dt>Settling (2%)</dt><dd data-out-ts>6.5 s</dd></div>
+                    </dl>
+                    <p class="note__verdict" data-out-verdict></p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="note" id="note-field" role="tabpanel" aria-labelledby="tab-field" data-field hidden>
+              <div class="note__text">
+                <p class="note__meta"><span class="tag tag--ozzy">Saved last week</span> from Electrostatics, lesson 4</p>
+                <h3>Field lines leave + and land on −</h3>
+                <p>The lines never cross, they're denser where the field is stronger, and the number leaving a charge is proportional to its size. Drag the charges and watch.</p>
+                <p class="hand note__scribble">Two like charges: the lines push apart and leave a null point between them.</p>
+                <div class="note__presets">
+                  <button class="chip" type="button" data-add="1">Add +</button>
+                  <button class="chip" type="button" data-add="-1">Add −</button>
+                  <button class="chip" type="button" data-reset>Reset</button>
+                </div>
+              </div>
+              <div class="note__sim">
+                <canvas class="note__field" tabindex="0" aria-label="Electric field lines between point charges. Drag charges, or use arrow keys to move the newest one."></canvas>
+              </div>
+            </article>
+          </div>
+
+          <div class="ask sheet" data-ask>
+            <div class="ask__head">
+              <div class="ask__avatar" data-ask-avatar></div>
+              <div>
+                <h3>Ask Nyq about your notes</h3>
+                <p>Answers quote your own notes back to you, so they're in words you already understand.</p>
+              </div>
+            </div>
+            <div class="ask__log" data-ask-log aria-live="polite"></div>
+            <div class="ask__suggest" data-ask-suggest>
+              <button class="chip" type="button">Why does more damping mean less overshoot?</button>
+              <button class="chip" type="button">What happens with two positive charges?</button>
+              <button class="chip" type="button">Quiz me on what I keep forgetting</button>
+            </div>
+            <form class="inline-form" data-ask-form>
+              <label class="visually-hidden" for="ask-input">Ask a question</label>
+              <input class="input" id="ask-input" name="q" placeholder="Ask about a note…" autocomplete="off" />
+              <button class="btn btn--blue" type="submit">Ask</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================== PLAY -->
+      <section class="section play" id="play" aria-labelledby="play-title">
+        <div class="wrap">
+          <div class="section-head section-head--split">
+            <h2 id="play-title">Control theory, with you as the controller.</h2>
+            <p class="lede">Keep Ozzy upright on top of the pole. Then hand it to the feedback controller from Unit 8 and try to knock him off.</p>
+          </div>
+          <div class="sheet play__card" data-play>
+            <div class="play__hud">
+              <div class="segmented" role="group" aria-label="Who's driving">
+                <button class="chip" type="button" data-drive="you" aria-pressed="true">You drive</button>
+                <button class="chip" type="button" data-drive="nyq" aria-pressed="false">Nyq drives</button>
+              </div>
+              <div class="play__stats" aria-live="off">
+                <div><span>Time up</span><strong data-time>0.0 s</strong></div>
+                <div><span>Your best</span><strong data-best>0.0 s</strong></div>
+              </div>
+              <div class="play__actions">
+                <button class="btn btn--sm btn--pink" type="button" data-nudge>Nudge Ozzy</button>
+                <button class="btn btn--sm btn--ghost" type="button" data-reset>Reset</button>
+              </div>
+            </div>
+            <div class="play__stage">
+              <canvas class="play__canvas" tabindex="0" data-cartpole aria-label="Inverted pendulum game. Ozzy balances on a pole attached to a cart. Move the pointer left and right, or use the arrow keys, to move the cart."></canvas>
+              <p class="play__hint hand" data-hint>move your mouse left and right (or use ← →)</p>
+              <div class="play__over" data-over hidden>
+                <div class="play__over-card">
+                  <strong data-over-title>Ozzy fell</strong>
+                  <p data-over-body></p>
+                  <div class="play__over-actions">
+                    <button class="btn btn--sm" type="button" data-retry>Try again</button>
+                    <button class="btn btn--sm btn--ghost" type="button" data-handoff>Let Nyq try</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="play__chart">
+              <span class="hand">pole angle θ</span>
+              <canvas data-strip aria-hidden="true"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================== COURSES -->
+      <section class="section courses" id="courses" aria-labelledby="courses-title">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 id="courses-title">A path through the hard parts.</h2>
+            <p class="lede">Four courses, from where your first class left off to where the graduate textbooks start. Each unit unlocks the next, and old units keep coming back in your daily quiz.</p>
+          </div>
+          <div class="courses__tabs" role="tablist" aria-label="Courses">
+            <button class="chip" role="tab" aria-selected="true" data-track-tab="control">Control theory</button>
+            <button class="chip" role="tab" aria-selected="false" data-track-tab="em">Electromagnetics</button>
+            <button class="chip" role="tab" aria-selected="false" data-track-tab="signals">Signals &amp; systems</button>
+            <button class="chip" role="tab" aria-selected="false" data-track-tab="circuits">Circuits</button>
+          </div>
+          <div class="courses__grid" data-courses>
+            <div class="path" data-path></div>
+            <aside class="courses__detail" data-unit-detail></aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================== CREW -->
+      <section class="section crew" id="crew" aria-labelledby="crew-title">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 id="crew-title">Meet the crew.</h2>
+            <p class="lede">Four simple shapes with strong opinions about engineering. Click one to say hello, then drag to spin them.</p>
+          </div>
+          <div class="crew__stage">
+            <canvas class="crew__canvas" data-cast role="img" aria-label="The four characters standing on hexagonal pedestals. The selected one hops up."></canvas>
+          </div>
+          <div class="crew__info">
+            <div class="crew__names" role="tablist" aria-label="Characters" data-crew-tabs></div>
+            <div class="crew__card sheet sheet--wobble" data-crew-card aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== TESTIMONIES -->
+      <section class="section voices" aria-labelledby="voices-title">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 id="voices-title">From the beta.</h2>
+          </div>
+          <div class="voices__board">
+            <figure class="sticky sticky--yellow">
+              <blockquote>I passed my controls final after failing it once. The daily Bode plot questions did what three re-reads of the textbook didn't.</blockquote>
+              <figcaption>Priya, mechanical engineering junior</figcaption>
+            </figure>
+            <figure class="sticky sticky--green">
+              <blockquote>Ten years out of school and I finally get Maxwell's equations. The field line notes are what did it.</blockquote>
+              <figcaption>Daniel, RF engineer</figcaption>
+            </figure>
+            <figure class="sticky sticky--pink">
+              <blockquote>247-day streak. Polly yelling at me about the right half-plane lives in my head now.</blockquote>
+              <figcaption>Marisol, EE grad student</figcaption>
+            </figure>
+            <figure class="sticky sticky--blue">
+              <blockquote>It noticed I kept confusing phase margin and gain margin and just kept quietly asking until I stopped.</blockquote>
+              <figcaption>Kenji, robotics engineer</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================== PRICING -->
+      <section class="section pricing" id="pricing" aria-labelledby="pricing-title">
+        <div class="wrap">
+          <div class="section-head section-head--center">
+            <h2 id="pricing-title">Free to learn. Max to go further.</h2>
+            <div class="segmented" role="group" aria-label="Billing period">
+              <button class="chip" type="button" data-billing="monthly" aria-pressed="false">Monthly</button>
+              <button class="chip" type="button" data-billing="yearly" aria-pressed="true">Yearly <span class="save">save 44%</span></button>
+            </div>
+          </div>
+          <div class="plans">
+            <article class="plan sheet">
+              <h3>Free</h3>
+              <p class="plan__price"><strong>$0</strong><span>forever</span></p>
+              <p class="plan__pitch">Everything you need for a daily habit.</p>
+              <ul class="ticks">
+                <li>One adaptive quiz every day</li>
+                <li>All four courses</li>
+                <li>Your last 30 saved notes</li>
+                <li>Streaks, XP and leagues</li>
+                <li>5 hearts a day</li>
+              </ul>
+              <button class="btn btn--ghost btn--block" type="button" data-signup data-plan="free">Start for free</button>
+            </article>
+            <article class="plan plan--max sheet">
+              <div class="plan__badge hand">Cubert's pick</div>
+              <h3>Max</h3>
+              <p class="plan__price"><strong data-price>$4.99</strong><span data-price-note>a month, billed $59.88 yearly</span></p>
+              <p class="plan__pitch">For when there's an exam, or a job, on the line.</p>
+              <ul class="ticks">
+                <li>Unlimited quizzes and hearts</li>
+                <li>Every note, forever, with all simulations</li>
+                <li>Unlimited questions to Nyq</li>
+                <li>Practice exams built from your weak spots</li>
+                <li>Offline lessons</li>
+              </ul>
+              <button class="btn btn--block" type="button" data-signup data-plan="max">Try Max free for 14 days</button>
+            </article>
+          </div>
+          <p class="pricing__note">Students get 50% off Max with a school email. Teams and classrooms: <a href="mailto:schools@nyquisition.app">schools@nyquisition.app</a>.</p>
+        </div>
+      </section>
+
+      <!-- ============================================================ FAQ -->
+      <section class="section faq" id="faq" aria-labelledby="faq-title">
+        <div class="wrap faq__grid">
+          <div>
+            <h2 id="faq-title">Questions.</h2>
+            <p class="lede">Something else? Email <a href="mailto:hello@nyquisition.app">hello@nyquisition.app</a> and a real person answers.</p>
+          </div>
+          <div class="faq__list">
+            <details>
+              <summary>What level is this for?</summary>
+              <p>Roughly the second year of an engineering degree and beyond. If you've seen calculus and differential equations, you're ready. Each course starts with a short placement quiz so you skip what you already know.</p>
+            </details>
+            <details>
+              <summary>Can five minutes a day really work for material this dense?</summary>
+              <p>Five minutes of the right questions beats an hour of re-reading. Spaced retrieval practice is one of the best-replicated findings in learning research. The hard part is picking the right question on the right day, and that's the part the AI does.</p>
+            </details>
+            <details>
+              <summary>How is the AI different from asking a chatbot?</summary>
+              <p>It knows your history. Every question, answer and saved note feeds a model of what you know, so explanations build on the way you've understood things before, and its quizzes aim at real gaps rather than generic ones.</p>
+            </details>
+            <details>
+              <summary>Will it replace my course or textbook?</summary>
+              <p>It's built to sit beside them. Lots of learners use it to stay on top of a class they're taking, or to keep material fresh after the exam.</p>
+            </details>
+            <details>
+              <summary>Which platforms does it run on?</summary>
+              <p>iPhone, Android and the web. Your streak and notes sync between all three.</p>
+            </details>
+            <details>
+              <summary>Can I cancel Max any time?</summary>
+              <p>Yes. Cancel from settings and you keep Max until the end of the billing period. Your notes stay in your account either way.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ CTA -->
+      <section class="section final" aria-labelledby="final-title">
+        <div class="wrap">
+          <div class="final__card sheet">
+            <div class="final__crew" aria-hidden="true" data-final-crew></div>
+            <h2 id="final-title">Your first lesson takes five minutes.</h2>
+            <p class="lede">Pick a course, set a daily goal, and get a quiz tomorrow morning tuned to how today's went.</p>
+            <form class="inline-form final__form" data-final-form novalidate>
+              <label class="visually-hidden" for="final-email">Email</label>
+              <input class="input" id="final-email" type="email" name="email" placeholder="you@school.edu" autocomplete="email" />
+              <button class="btn" type="submit">Get started</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/js/home.js"></script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+/* Shared styles for interactive pencil simulations (home notes + blog embeds) */
+
+.slider {
+  display: grid;
+  gap: var(--s-1);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+.slider strong {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 28px;
+  background: transparent;
+  cursor: pointer;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  height: 10px;
+  border: 2px solid var(--ink);
+  border-radius: 99px;
+  background: var(--paper-deep);
+}
+input[type='range']::-moz-range-track {
+  height: 6px;
+  border: 2px solid var(--ink);
+  border-radius: 99px;
+  background: var(--paper-deep);
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  margin-top: -9px;
+  border: 2.5px solid var(--ink);
+  border-radius: 7px;
+  background: var(--cubert);
+  box-shadow: 0 2px 0 var(--ink);
+  rotate: 45deg;
+  transition: scale var(--dur-fast);
+}
+input[type='range']::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid var(--ink);
+  border-radius: 7px;
+  background: var(--cubert);
+  box-shadow: 0 2px 0 var(--ink);
+  rotate: 45deg;
+}
+input[type='range']:active::-webkit-slider-thumb {
+  scale: 1.15;
+}
+
+.note__presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.note__sim {
+  display: grid;
+  gap: var(--s-3);
+  align-content: start;
+}
+.note__plot {
+  width: 100%;
+  height: 230px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: rgb(255 255 255 / 0.6);
+}
+.note__row {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: var(--s-4);
+}
+.note__splane {
+  width: 170px;
+  height: 170px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: rgb(255 255 255 / 0.6);
+}
+.note__controls {
+  display: grid;
+  gap: var(--s-3);
+  align-content: start;
+}
+.note__readout {
+  display: flex;
+  gap: var(--s-5);
+}
+.note__readout dt {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+.note__readout dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.note__verdict {
+  font-size: 0.92rem;
+  color: var(--nyq-deep);
+  font-weight: 600;
+}
+.note__field {
+  width: 100%;
+  height: 420px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: rgb(255 255 255 / 0.65);
+  touch-action: none;
+}

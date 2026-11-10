@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Nyquisition</title>
+    <meta name="description" content="Learning science, study guides and news from the team building Nyquisition." />
+    <meta name="theme-color" content="#fbf4df" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/css/base.css" />
+    <link rel="stylesheet" href="/src/css/blog.css" />
+  </head>
+  <body>
+    <main id="main">
+      <header class="page-hero wrap blog-hero">
+        <h1>Notes from the margin.</h1>
+        <p class="lede">Learning science, study guides for the hard parts of engineering, and what we're building next.</p>
+      </header>
+      <div class="wrap">
+        <section aria-label="Featured post" data-featured></section>
+        <section class="blog-list" aria-labelledby="all-posts">
+          <div class="blog-list__bar">
+            <h2 id="all-posts" class="visually-hidden">All posts</h2>
+            <div class="segmented" role="group" aria-label="Filter by topic" data-filters></div>
+            <label class="search">
+              <span class="visually-hidden">Search posts</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+              <input class="input" type="search" placeholder="Search posts" data-search />
+            </label>
+          </div>
+          <p class="blog-list__count" data-count aria-live="polite"></p>
+          <div class="post-grid" data-grid></div>
+          <div class="blog-list__more"><button class="btn btn--ghost" type="button" data-more>Show more posts</button></div>
+        </section>
+        <aside class="news sheet" aria-labelledby="news-title">
+          <div class="news__crew" data-news-crew aria-hidden="true"></div>
+          <div>
+            <h2 id="news-title">One good letter a month.</h2>
+            <p>New study guides, what we're learning from the data, and nothing else. Unsubscribe in one click.</p>
+          </div>
+          <form class="inline-form" data-newsletter novalidate>
+            <label class="visually-hidden" for="blog-email">Email</label>
+            <input class="input" id="blog-email" name="email" type="email" placeholder="you@school.edu" autocomplete="email" />
+            <button class="btn" type="submit">Subscribe</button>
+          </form>
+        </aside>
+      </div>
+    </main>
+    <script type="module" src="/src/js/blog.js"></script>
+  </body>
+</html>
